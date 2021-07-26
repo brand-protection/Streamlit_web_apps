@@ -50,8 +50,8 @@ def app():
         sellers_id = []
 
         for item in catalogy['results']:
-            sellers_id.append(catalogy['results'][n]['sellers_id'])
-            i = i + 1
+            sellers_id.append(catalogy['results'][n]['seller_id'])
+            n = n + 1
 
         #Criando variavél para pegar os nomes dos sellers 
 
@@ -59,8 +59,8 @@ def app():
 
         sellers_name = []
 
-        for seller in sellers_id:
-            r = requests.get('https://api.mercadolibre.com/users/{}'.format(seller_id[n]))
+        for id in sellers_id:
+            r = requests.get('https://api.mercadolibre.com/users/{}'.format(id))
             sellers = r.json()
             sellers_name.append(sellers['nickname'])
             s = s + 1 
