@@ -15,7 +15,7 @@ import base64
 def app():
     # --- DATABASE -----
     #Criando o database/fazendo a conexão 
-    conn = sqlite3.connect('Apps\estoque_mercado_livre\Data\Database.db')
+    conn = sqlite3.connect('Apps/estoque_mercado_livre/Data/Database.db')
 
     #Criando o cursor 
     c = conn.cursor()
