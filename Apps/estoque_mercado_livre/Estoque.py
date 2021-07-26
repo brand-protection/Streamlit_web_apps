@@ -9,6 +9,9 @@ import streamlit as st
 import sqlite3
 import base64
 
+
+
+
 def app():
     # --- DATABASE -----
     #Criando o database/fazendo a conexão 
@@ -24,7 +27,7 @@ def app():
 
     def add_url(url):
         #Acrescentando o valor da url no sqlite 
-        c.execute("INSERT INTO urls(url) VALUES ('{}')".format(url))
+        c.execute("INSERT INTO Urls(url) VALUES ('{}')".format(url))
 
         #Commit do database 
         conn.commit()
@@ -108,6 +111,4 @@ def app():
     #Adicionando a nova url
     if add_url_button:
         add_url(new_url)
-
-
 
