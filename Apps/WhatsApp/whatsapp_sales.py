@@ -41,7 +41,7 @@ def app():
         dataset_final.reset_index(drop=True)
 
         #Pegando apenas numeros 
-        dataset_final = dataset_final[dataset_final['Quantidade'].str.len() < 3]
+        dataset_final = dataset_final[dataset_final['Quantidade'].str.len() <= 3]
 
         #Arrumando o dado de quantidade
         dataset_final["Quantidade"] = dataset_final["Quantidade"].astype('int')
