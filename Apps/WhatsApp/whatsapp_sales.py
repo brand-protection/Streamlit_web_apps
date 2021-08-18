@@ -53,7 +53,8 @@ def app():
             dataset_final['Loja'] = dataset_final['Loja'].str.replace("Zaher", "ZAHER")
             dataset_final['Loja'] = dataset_final['Loja'].str.replace("Zhaer", "ZAHER")
             dataset_final['Loja'] = dataset_final['Loja'].str.replace("Vítor", "Vitor")
-            dataset_final['Item'] = dataset_final['Item'].str.replace("Max", "MAX")        
+            dataset_final['Item'] = dataset_final['Item'].str.replace("Max", "MAX")
+            dataset_final['Item'] = dataset_final['Item'].str.replace("hero9", "H9") 
         except:
             pass
 
