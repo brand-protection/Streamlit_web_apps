@@ -4,7 +4,7 @@ import pandas as pd
 
 
 #Criando conexão com o databse 
-database = sqlite3.connect("./Data/Database.db")
+database = sqlite3.connect("Database.db")
 
 #Criando o cursor
 c =  database.cursor()
@@ -13,7 +13,7 @@ c =  database.cursor()
 c.execute("CREATE TABLE IF NOT EXISTS Urls(url_id INTEGER PRIMARY KEY AUTOINCREMENT, url VARCHAR(1000));")
 
 #Abrindo o arquivo 
-dataset = pd.read_excel("./Data/Urls.xlsx")
+dataset = pd.read_excel("Urls.xlsx")
 
 #Colocando os dados dentro da tabela 
 for url in dataset['Url']:
