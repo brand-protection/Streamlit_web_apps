@@ -28,7 +28,7 @@ def app():
 
     if button: 
         #Fazendo o requests 
-        r = requests.get('https://api.mercadolibre.com/products/{}/items#json'.format(product_id))
+        r = requests.get('https://api.mercadolibre.com/products/{}/items?limit=220'.format(product_id))
 
         #Lendo o JSON
         catalogy = r.json()
