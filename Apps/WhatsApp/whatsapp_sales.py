@@ -43,9 +43,6 @@ def app():
         #Pegando apenas numeros 
         dataset_final = dataset_final[dataset_final['Quantidade'].str.len() <= 3]
 
-        #Arrumando o dado de quantidade
-        #dataset_final["Quantidade"] = dataset_final["Quantidade"].astype('int')
-
         #Arrumando os nomes do seller caso estejam diferentes 
         try:
             dataset_final["Loja"] = dataset_final["Loja"].str.replace("Zharer","ZAHER")
@@ -54,9 +51,19 @@ def app():
             dataset_final['Loja'] = dataset_final['Loja'].str.replace("Zhaer", "ZAHER")
             dataset_final['Loja'] = dataset_final['Loja'].str.replace("Vítor", "Vitor")
             dataset_final['Item'] = dataset_final['Item'].str.replace("Max", "MAX")
+            dataset_final['Item'] = dataset_final['Item'].str.replace("max", "MAX")
             dataset_final['Item'] = dataset_final['Item'].str.replace("hero9", "H9") 
+            dataset_final['Item'] = dataset_final['Item'].str.replace("hero8", "H8") 
+            dataset_final['Item'] = dataset_final['Item'].str.replace("hero 8", "H8")
+            dataset_final['Item'] = dataset_final['Item'].str.replace("hero10", "H10")
         except:
             pass
+
+        #Arrumando a coluna de loja 
+        dataset_final = dataset_final[dataset_final['Loja'].str.len() < 10]
+
+        #Arrumando o dado de quantidade
+        dataset_final["Quantidade"] = dataset_final["Quantidade"].astype('int')
 
         #Fazendo o groupby dos vendedores
         sellthru = dataset_final.groupby(['Loja','Item'])['Quantidade'].sum().reset_index()
