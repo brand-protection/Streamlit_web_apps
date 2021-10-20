@@ -44,7 +44,7 @@ def app():
         dataset_final = dataset_final[dataset_final['Quantidade'].str.len() <= 3]
 
         #Arrumando o dado de quantidade
-        dataset_final["Quantidade"] = dataset_final["Quantidade"].astype('int')
+        #dataset_final["Quantidade"] = dataset_final["Quantidade"].astype('int')
 
         #Arrumando os nomes do seller caso estejam diferentes 
         try:
