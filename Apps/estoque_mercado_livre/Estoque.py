@@ -80,9 +80,9 @@ def app():
         Dataset['Estoque'] = estoque
 
         #Arrumando os valores de estoque 
-        #Dataset['Estoque'] = Dataset['Estoque'].str.replace("(","")
-        #Dataset["Estoque"] = Dataset["Estoque"].str.replace(" disponíveis","")
-        #Dataset["Estoque"] = Dataset["Estoque"].str.replace(")","")
+        Dataset['Estoque'] = Dataset['Estoque'].str.replace("(","")
+        Dataset["Estoque"] = Dataset["Estoque"].str.replace(" disponíveis","")
+        Dataset["Estoque"] = Dataset["Estoque"].str.replace(")","")
 
         #Fazendo o download 
         download_file(Dataset)    
