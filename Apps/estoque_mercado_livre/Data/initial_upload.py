@@ -4,7 +4,7 @@ import pandas as pd
 
 
 #Criando conexão com o databse 
-database = sqlite3.connect("Database.db")
+database = sqlite3.connect("C:/Users/pedro/Documents/FIVE-C/Streamlit/Apps/estoque_mercado_livre/Data/Database.db")
 
 #Criando o cursor
 c =  database.cursor()
