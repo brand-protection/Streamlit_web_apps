@@ -13,7 +13,7 @@ c =  database.cursor()
 c.execute("CREATE TABLE IF NOT EXISTS Urls(url_id INTEGER PRIMARY KEY AUTOINCREMENT, url VARCHAR(1000));")
 
 #Abrindo o arquivo 
-dataset = pd.read_excel("Urls.xlsx")
+dataset = pd.read_excel("C:/Users/pedro/Documents/FIVE-C/Streamlit/Apps/estoque_mercado_livre/Data/Urls.xlsx")
 
 #Colocando os dados dentro da tabela 
 for url in dataset['Url']:
