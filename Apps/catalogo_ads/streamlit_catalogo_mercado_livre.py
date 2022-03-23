@@ -53,6 +53,15 @@ def app():
             sellers_id.append(catalogy['results'][n]['seller_id'])
             n = n + 1
 
+        #Criando para pegar o preço
+        price_id = []
+
+        p = 0
+
+        for item in catalogy['results']:
+            price_id.append(catalogy['results'][p]['price'])
+            p = p + 1
+
         #Criando variavél para pegar os nomes dos sellers 
 
         s = 0 
@@ -72,6 +81,12 @@ def app():
         #Colocando os dados 
         dataset['Ids'] = ids 
         dataset['Sellers'] = sellers_name
+        dataset['price'] = price_id
+        dataset['price'] = dataset['price'].astype('string')
+        dataset['price'] = dataset['price'].str.replace(".",",")
+
+
+        #dataset['price'] = [s[:-2] for s in dataset['price']]
 
         #Mostrando o dataset 
         st.dataframe(dataset)
